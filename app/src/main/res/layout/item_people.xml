@@ -6,7 +6,7 @@
 
     <variable
         name="peopleViewModel"
-        type="com.example.jhordan.people_mvvm.viewmodel.ItemPeopleViewModel"/>
+        type="com.pathwaymedia.valisimofashions.people_mvvm.viewmodel.ItemPeopleViewModel"/>
   </data>
 
 

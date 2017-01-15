@@ -7,7 +7,7 @@
 
     <variable
         name="peopleDetailViewModel"
-        type="com.example.jhordan.people_mvvm.viewmodel.PeopleDetailViewModel"/>
+        type="com.pathwaymedia.valisimofashions.people_mvvm.viewmodel.PeopleDetailViewModel"/>
   </data>
 
   <android.support.design.widget.CoordinatorLayout
