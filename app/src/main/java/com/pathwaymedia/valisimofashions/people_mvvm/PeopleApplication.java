@@ -19,9 +19,14 @@ package com.pathwaymedia.valisimofashions.people_mvvm;
 import android.app.Application;
 import android.content.Context;
 
+import com.afrozaar.wp_api_v2_client_android.model.Post;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.pathwaymedia.valisimofashions.people_mvvm.data.PeopleFactory;
 import com.pathwaymedia.valisimofashions.people_mvvm.data.PeopleService;
 
+import co.paystack.android.PaystackSdk;
+import io.paperdb.Paper;
 import rx.Scheduler;
 import rx.schedulers.Schedulers;
 
@@ -29,6 +34,20 @@ public class PeopleApplication extends Application {
 
   private PeopleService peopleService;
   private Scheduler scheduler;
+  public static Post current_post;
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    FacebookSdk.sdkInitialize(getApplicationContext());
+    AppEventsLogger.activateApp(this);
+    PaystackSdk.initialize(getApplicationContext());
+    PaystackSdk.setPublicKey(getString(R.string.paystack_public_key));
+    Paper.init(this);
+
+
+
+  }
 
   private static PeopleApplication get(Context context) {
     return (PeopleApplication) context.getApplicationContext();
