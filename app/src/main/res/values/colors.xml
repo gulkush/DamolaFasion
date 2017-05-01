@@ -2,9 +2,11 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#565555</color>
-    <color name="colorAccent">#EC008B</color>
+    <color name="colorAccent">#B6005B</color>
 
     <color name="white">#fff</color>
     <color name="transparent_black">#E6000000</color>
-    <color name="vpink">#EC008B</color>
+    <color name="vpink">#B6005B</color>
+    <color name="okgreen">#00C417</color>
+    <color name="nokred">#ED0000</color>
 </resources>

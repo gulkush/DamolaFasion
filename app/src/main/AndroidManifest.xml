@@ -1,76 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pathwaymedia.valisimofashions.people_mvvm">
+    package="com.pathwaymedia.valisimofashions">
 
     <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- Permission to use camera - required -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- Camera features - recommended -->
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera.autofocus"
-        android:required="false" />
-    <uses-feature
-        android:name="android.hardware.camera.flash"
-        android:required="false" />
 
     <application
-        android:name=".PeopleApplication"
+        android:name="com.pathwaymedia.valisimofashions.PeopleApplication"
         android:allowBackup="true"
-        android:icon="@drawable/valisimo_icon_512"
+        android:icon="@drawable/valisimo_icon_new"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".view.PeopleActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".view.PeopleDetailActivity"
-            android:parentActivityName=".view.PeopleActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".view.SplashActivity"
-            android:theme="@style/AppTheme.NoActionBar">
 
+        <activity
+            android:name="com.pathwaymedia.valisimofashions.view.SplashActivity"
+            android:theme="@style/AppTheme.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".view.LoginActivity" />
-        <activity android:name=".view.TestActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name="com.pathwaymedia.valisimofashions.view.LoginActivity"
+            android:theme="@style/AppTheme.Translucent"/>
+        <activity
+            android:name="com.pathwaymedia.valisimofashions.view.DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <intent-filter android:label="valisimo_subscription_dl">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- note that the leading "/" is required for pathPrefix-->
+                <!-- Accepts URIs that begin with "valisimo://subscription” -->
+                <data android:scheme="valisimo"
+                    android:host="subscription" />
+
             </intent-filter>
+
+
             </activity>
         <activity
-            android:name=".view.DrawerActivity"
-            android:label="@string/title_activity_drawer"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".view.PostWebViewActivity" />
-
-        <!-- Activities responsible for gathering payment info -->
-        <activity
-            android:name="io.card.payment.CardIOActivity"
-            android:configChanges="keyboardHidden|orientation" />
-        <activity android:name="io.card.payment.DataEntryActivity" />
-        <activity android:name=".view.CardScanActivity" />
-        <activity android:name=".view.TutorialDetailActivity" />
-        <activity
-            android:name=".view.CustomLightboxActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/AppTheme.Translucent" />
+            android:name="com.pathwaymedia.valisimofashions.view.PostWebViewActivity"
+            android:parentActivityName="com.pathwaymedia.valisimofashions.view.TutorialDetailActivity" />
+        <activity android:name="com.pathwaymedia.valisimofashions.view.PaystackWebViewActivity"
+            android:parentActivityName="com.pathwaymedia.valisimofashions.view.DrawerActivity"/>
+        <activity android:name="com.pathwaymedia.valisimofashions.view.TutorialDetailActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName="com.pathwaymedia.valisimofashions.view.DrawerActivity"/>
+        <service
+            android:name=".notification.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/valisimo_icon_new_24_bw" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
     </application>
 
 </manifest>

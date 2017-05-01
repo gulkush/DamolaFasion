@@ -2,15 +2,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/vpink"
-    tools:context="com.pathwaymedia.valisimofashions.people_mvvm.view.FacebookLoginButtonFragment">
+    android:background="@drawable/valisimo_bg2"
+    tools:context="com.pathwaymedia.valisimofashions.view.FacebookLoginButtonFragment">
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:visibility="gone"
         android:layout_gravity="center"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:text="Welcome to Valisimo"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Learn a new skill"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:id="@+id/ll_fb"
+        android:layout_gravity="bottom">
+
+        <com.pathwaymedia.valisimofashions.FontAwesomeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="40sp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textColor="@android:color/white"
+            android:text="@string/icon_fb"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/border"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="Sign in with facebook"/>
+
+
+
+    </LinearLayout>
+
+
 
 </FrameLayout>

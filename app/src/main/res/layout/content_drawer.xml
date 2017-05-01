@@ -6,14 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/white"
+    android:background="@color/colorAccent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.pathwaymedia.valisimofashions.people_mvvm.view.DrawerActivity"
+    tools:context="com.pathwaymedia.valisimofashions.view.DrawerActivity"
     tools:showIn="@layout/app_bar_drawer">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:id="@+id/content_drawer"
+        android:layout_above="@+id/adView"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -22,59 +23,62 @@
             android:orientation="vertical"
             android:weightSum="2">
 
-            <android.support.v7.widget.CardView
+            <TextView
                 android:layout_width="match_parent"
-                android:id="@+id/cv_fashion"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:text="Select an option"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:padding="20dp"
                     android:orientation="vertical"
                     >
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
                         android:onClick="onClickFashion"
+                        android:padding="0dp"
                         android:layout_above="@+id/tv_fashion"
-                        android:src="@drawable/scissors"/>
+                        android:src="@drawable/fashion"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:id="@+id/tv_fashion"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="17sp"
                         android:onClick="onClickFashion"
                         android:padding="5dp"
+                        android:textColor="@android:color/white"
                         android:layout_alignParentBottom="true"
                         android:text="Fashion"/>
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="2dp"></LinearLayout>
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:id="@+id/cv_makeup"
-                android:layout_weight="1">
-
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:padding="20dp"
                     android:orientation="vertical"
                     >
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="10dp"
+                        android:padding="0dp"
                         android:onClick="onClickMakeup"
                         android:layout_above="@+id/tv_makeup"
                         android:src="@drawable/makeup"/>
@@ -84,15 +88,93 @@
                         android:id="@+id/tv_makeup"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="17sp"
                         android:onClick="onClickMakeup"
                         android:padding="5dp"
+                        android:textColor="@color/white"
                         android:layout_alignParentBottom="true"
                         android:text="Makeup"/>
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:padding="20dp"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:onClick="onClickIllustrations"
+                        android:padding="0dp"
+                        android:layout_above="@+id/tv_illustration"
+                        android:src="@drawable/illustration"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/tv_illustration"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="17sp"
+                        android:onClick="onClickIllustrations"
+                        android:padding="5dp"
+                        android:textColor="@android:color/white"
+                        android:layout_alignParentBottom="true"
+                        android:text="Illustrations"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:padding="17sp"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:onClick="onClickSubscription"
+                        android:layout_above="@+id/tv_sub"
+                        android:src="@drawable/sub"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/tv_sub"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="17sp"
+                        android:onClick="onClickSubscription"
+                        android:padding="5dp"
+                        android:textColor="@color/white"
+                        android:layout_alignParentBottom="true"
+                        android:text="Subscription"/>
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
         </LinearLayout>
 
 
@@ -102,6 +184,8 @@
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id">
     </com.google.android.gms.ads.AdView>

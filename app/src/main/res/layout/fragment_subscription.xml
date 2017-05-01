@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pathwaymedia.valisimofashions.people_mvvm.view.SubscriptionFragment">
+    android:background="@android:color/white"
+    tools:context="com.pathwaymedia.valisimofashions.view.SubscriptionFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -25,11 +26,41 @@
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:padding="20dp"
+                    android:textColor="@color/nokred"
                     android:text="@string/text_subscribe" />
 
-                <android.support.v7.widget.CardView
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:padding="20dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/off"/>
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:id="@+id/rb_paystack"
+                        android:layout_height="wrap_content"
+                        android:text="Pay in Naira"/>
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Pay in Dollars"/>
+                </RadioGroup>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_margin="20dp"
+                    android:orientation="vertical"
                     android:layout_height="wrap_content">
 
                     <LinearLayout
@@ -38,27 +69,36 @@
                         android:padding="20dp"
                         android:orientation="vertical">
 
+
+
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:background="@drawable/border1"
                             android:textSize="20sp"
-                            android:textAlignment="center"
-                            android:text="Monthly Plan"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textAlignment="center"
-                            android:text="123 Naira"/>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/bt_subscribe"
-                            android:text="Subscribe"/>
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:id="@+id/tv_subscribe"
+                            android:layout_gravity="center"
+                            android:text="Renew Subscription"/>
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/black"
+                            android:text="@string/paytitle"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bankdetails"/>
+                    </LinearLayout>
+                </LinearLayout>
 
 
 
@@ -76,7 +116,14 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:padding="20dp"
+                    android:textColor="@color/okgreen"
                     android:text="@string/text_subscribed" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:padding="20dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/on"/>
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
@@ -97,10 +144,11 @@
                             android:paddingBottom="10dp"
                             android:text="Subscription Details"/>
 
-                        <LinearLayout
+                        <!--LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="2"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -109,14 +157,14 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
-                                android:gravity="right"
+                                android:gravity="left"
                                 android:text="Plan:"/>
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:textSize="18dp"
-                                android:gravity="center"
+                                android:gravity="left"
                                 android:id="@+id/tv_planName"
                                 android:layout_height="wrap_content"
                                 android:text="Monthly"/>
@@ -126,6 +174,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="2"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -134,18 +183,18 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
-                                android:gravity="right"
+                                android:gravity="left"
                                 android:text="Amount:"/>
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:textSize="18dp"
-                                android:gravity="center"
+                                android:gravity="left"
                                 android:id="@+id/tv_amount"
                                 android:layout_height="wrap_content"
                                 android:text="123 Naira"/>
-                        </LinearLayout>
+                        </LinearLayout-->
 
 
 
@@ -154,6 +203,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="2"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -162,14 +212,14 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
-                                android:gravity="right"
+                                android:gravity="left"
                                 android:text="Start Date:"/>
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:textSize="18dp"
-                                android:gravity="center"
+                                android:gravity="left"
                                 android:id="@+id/tv_start"
                                 android:layout_height="wrap_content"
                                 android:text="01/02/2017"/>
@@ -179,6 +229,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:weightSum="2"
+                            android:layout_marginTop="10dp"
                             android:orientation="horizontal">
 
                             <TextView
@@ -187,14 +238,14 @@
                                 android:layout_height="wrap_content"
                                 android:textSize="18sp"
                                 android:textStyle="bold"
-                                android:gravity="right"
+                                android:gravity="left"
                                 android:text="End Date:"/>
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_weight="1"
                                 android:textSize="18dp"
-                                android:gravity="center"
+                                android:gravity="left"
                                 android:id="@+id/tv_next_payment_date"
                                 android:layout_height="wrap_content"
                                 android:text="01/03/2017"/>
@@ -215,6 +266,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pb"
+            android:visibility="gone"
             android:layout_gravity="center"/>
 
 

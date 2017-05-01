@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/valisimologo_600_200"
+    android:background="@android:color/black"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -16,22 +16,20 @@
         android:id="@+id/iv_profile"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/abc"
+        android:src="@drawable/valicon_331"
         app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+        app:civ_border_color="@android:color/primary_text_dark"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_fbname"
-        android:background="@android:color/black"
         android:text="Android Studio"
         />
 
     <TextView
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
-        android:background="@android:color/black"
         android:layout_height="wrap_content"
         android:text="android.studio@android.com" />
 

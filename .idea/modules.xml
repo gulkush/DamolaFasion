@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DamolaFasion.iml" filepath="$PROJECT_DIR$/DamolaFasion.iml" />
       <module fileurl="file://$PROJECT_DIR$/People-MVVM.iml" filepath="$PROJECT_DIR$/People-MVVM.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paystack/paystack.iml" filepath="$PROJECT_DIR$/paystack/paystack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/wp-api-v2-client-android/wp-api-v2-client-android.iml" filepath="$PROJECT_DIR$/library/wp-api-v2-client-android/wp-api-v2-client-android.iml" />
     </modules>
   </component>
 </project>

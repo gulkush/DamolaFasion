@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "626386001898",
+    "firebase_url": "https://valisimo-1d0eb.firebaseio.com",
+    "project_id": "valisimo-1d0eb",
+    "storage_bucket": "valisimo-1d0eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626386001898:android:08c7be954382857e",
+        "android_client_info": {
+          "package_name": "com.pathwaymedia.valisimofashions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626386001898-bi7qbmq3gpq1s6s6aj66ioooakjqrtpu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pathwaymedia.valisimofashions",
+            "certificate_hash": "47649595ade9a20973705b16ce7870b408d0db86"
+          }
+        },
+        {
+          "client_id": "626386001898-rtlub4n4b0f2f2vo5t9rr2jcch87pv8m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2U_mAQui35QPG6_s_nc-jYNJKuRXuF_Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

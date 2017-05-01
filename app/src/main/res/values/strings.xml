@@ -21,9 +21,15 @@
     <string name="paystack_public_key">pk_test_f00efea04e4f2d947d66aebcd9022b4cc1c050a1</string>
     <string name="youtube_api_key">AIzaSyCLZImoANtkmUQnzqfyl3_1alon170Ab3M</string>
     <string name="youtube_img_url">https://img.youtube.com/vi/#ytid#/0.jpg</string>
-    <string name="banner_ad_unit_id">ca-app-pub-6844894412719021~1520901907</string>
-    <string name="text_subscribe">You are currently not subscribed to any of our plans. Please subscribe to get access to our premium video content.</string>
-    <string name="text_subscribed">Your subscription is active.</string>
-    <string name="planCode">PLN_udcapu7k1pqjh65</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6844894412719021/8904567900</string>
+    <string name="text_subscribe">Your subscription is inactive</string>
+    <string name="text_subscribed">Your subscription is active</string>
+    <string name="planCode">PLN_txbb2gs0y4naug4</string>
+    <string name="subs_page_url">https://paystack.com/pay/inDeNz3dpi</string>
+    <string name="icon_fb">&#xf082;</string>
+    <string name="bankdetails">0004911464\nBoglo Olugbenga\nGTBank\n\nSend your details to this WhatsApp number after you pay +234 802 332 6842\n\nDetails to send after payment are:\nEmail, First Name, Last Name, Mobile Number and Teller number (for direct bank deposit)</string>
+    <string name="paytitle">You can also pay directly to this bank account</string>
+    <string name="action_zoomin">zoomin</string>
+    <string name="action_zoomout">zoomout</string>
 
 </resources>

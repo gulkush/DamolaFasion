@@ -5,11 +5,11 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.pathwaymedia.valisimofashions.people_mvvm"
-        minSdkVersion 16
+        applicationId "com.pathwaymedia.valisimofashions"
+        minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 9
+        versionName "1.9"
         multiDexEnabled true
     }
     buildTypes {
@@ -39,34 +39,23 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile supportDependencies.appCompat
-    compile supportDependencies.design
-    compile supportDependencies.recyclerView
-    compile supportDependencies.cardView
-    compile supportDependencies.palette
-    compile supportDependencies.supportAnnotation
-    compile supportDependencies.percent
-    compile retrofitDependencies.retrofit
-    compile retrofitDependencies.gson
-    compile retrofitDependencies.rxAdapterJava
-    compile rxDependencies.rxAndroid
-    compile rxDependencies.rxJava
-    compile circleImageView
-    compile glide
-    compile butterknife
-    testCompile testingDependencies.junit
-    testCompile testingDependencies.mockito
-    testCompile testingDependencies.robolectric
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
     compile project(':library:wp-api-v2-client-android')
-    //compile project(':paystack')
-    compile files('lib/YouTubeAndroidPlayerApi.jar')
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.jakewharton.rxrelay:rxrelay:1.2.0'
-    compile 'io.card:android-sdk:5.4.1'
     compile 'com.google.firebase:firebase-ads:10.0.1'
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+
     compile 'io.paperdb:paperdb:2.0'
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.0.1'
+    compile group: 'com.squareup.retrofit', name: 'retrofit', version: '1.9.0'
+    compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.2.0'
 }
 
 configurations.all {
