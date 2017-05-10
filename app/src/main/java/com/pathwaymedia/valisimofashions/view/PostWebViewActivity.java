@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -65,12 +66,7 @@ public class PostWebViewActivity extends AppCompatActivity {
                 return true;
             }
         });
-        webView.setWebViewClient(new WebViewClient(){
-            public void onReceivedError(WebView view, int errorCod,String description, String failingUrl) {
-                //Toast.makeText(PostWebViewActivity.this, "Your Internet Connection May not be active Or " + description , Toast.LENGTH_LONG).show();
-                finish();
-            }
-        });
+        webView.setWebChromeClient(new WebChromeClient());
         WebSettings webSettings = webView.getSettings();
         webView.setVerticalScrollBarEnabled(false);
         webView.setHorizontalScrollBarEnabled(false);
