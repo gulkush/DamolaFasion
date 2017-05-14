@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.pathwaymedia.valisimofashions.PeopleApplication;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.List;
 
@@ -113,41 +115,39 @@ public class SubscriptionFragment extends Fragment {
     }
 
     private void checkSubscription() {
-        try {
-            String email = Paper.book().read("email", null);
-            //Toast.makeText(getActivity(), "checking Subscription for "+ email, Toast.LENGTH_SHORT).show();
-            Log.d("Check Subs", email);
-            //email = "abc@softkoki.com";
-            //create or fetch customer
-            ApiService apiService = ApiClient.getService();
-            HashMap<String, String> params = new HashMap<String, String>();
-            params.put("email", email);
-            apiService.checkSubscription(params, new Callback<GetSubscriptionResponse>() {
-                @Override
-                public void success(GetSubscriptionResponse getSubscriptionResponse, Response response) {
-                    subscriptionResponse = getSubscriptionResponse;
-                    if(getSubscriptionResponse.getStatus().equalsIgnoreCase("active")){
-                        editView(true);
-                        PeopleApplication.subscribed = true;
-                        Paper.book().write("subscribed", true);
-                    }else{
-                        editView(false);
-                        PeopleApplication.subscribed = false;
-                        Paper.book().write("subscribed", false);
-                    }
+        String email = Paper.book().read("email", null);
+        //Toast.makeText(getActivity(), "checking Subscription for "+ email, Toast.LENGTH_SHORT).show();
+        Log.d("Check Subs", email);
+        Toast.makeText(getActivity(), "Fetching subscription for "+email, Toast.LENGTH_SHORT).show();
+        //email = "abc@softkoki.com";
+        //create or fetch customer
+        ApiService apiService = ApiClient.getService();
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("email", email);
+        apiService.checkSubscription(params, new Callback<GetSubscriptionResponse>() {
+            @Override
+            public void success(GetSubscriptionResponse getSubscriptionResponse, Response response) {
+                subscriptionResponse = getSubscriptionResponse;
+                if(getSubscriptionResponse.getStatus().equalsIgnoreCase("active")){
+                    editView(true);
+                    PeopleApplication.subscribed = true;
+                    Paper.book().write("subscribed", true);
+                }else{
+                    editView(false);
+                    PeopleApplication.subscribed = false;
+                    Paper.book().write("subscribed", false);
                 }
+            }
 
-                @Override
-                public void failure(RetrofitError error) {
-                    Toast.makeText(getActivity(), "Error fetching subscription. Please try again after sometime.", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            @Override
+            public void failure(RetrofitError error) {
+                Toast.makeText(getActivity(), "checkSubscription1: "+error.getMessage(), Toast.LENGTH_SHORT).show();
+                StringWriter sw = new StringWriter();
+                PrintWriter pw = new PrintWriter(sw);
+                error.printStackTrace(pw);
+                sendFeedback(sw.toString());
+            }
+        });
 
     }
 
@@ -171,9 +171,9 @@ public class SubscriptionFragment extends Fragment {
                     /*Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.subs_page_url)));
                     startActivity(browserIntent);
                     getActivity().finish();*/
-                    final String email = Paper.book().read("email", null);
-                    String firstName = Paper.book().read("firstName", "Hello");
-                    String lastName = Paper.book().read("lastName", "Guest");
+                    String email = (Paper.book().read("email", "_")).trim();
+                    String firstName = Paper.book().read("firstName", "Hello").replace(" ", "_");
+                    String lastName = Paper.book().read("lastName", "Guest").replace(" ", "_");
 
                     String url = "http://valisimofashions.com/api/subscribe?email="+email+"&first_name="+firstName+"&last_name="+lastName;
                     if(!rb_paystack.isChecked()){
@@ -189,6 +189,15 @@ public class SubscriptionFragment extends Fragment {
                 }
             });
         }
+    }
+
+    private void sendFeedback(String body) {
+        Intent Email = new Intent(Intent.ACTION_SEND);
+        Email.setType("text/email");
+        Email.putExtra(Intent.EXTRA_EMAIL, new String[] { "mobile@valisimofashions.com" });
+        Email.putExtra(Intent.EXTRA_SUBJECT, "Exception");
+        Email.putExtra(Intent.EXTRA_TEXT, body);
+        getActivity().startActivity(Intent.createChooser(Email, "Send Feedback:"));
     }
 
 }
