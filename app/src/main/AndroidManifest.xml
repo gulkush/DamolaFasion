@@ -39,6 +39,7 @@
             android:theme="@style/AppTheme.Translucent"/>
         <activity
             android:name="com.pathwaymedia.valisimofashions.view.DrawerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"
             android:label="@string/title_activity_drawer"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar" >

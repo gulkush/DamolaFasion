@@ -135,7 +135,9 @@ public class AllPostsFragment extends Fragment {
                     public void onSuccess(List<Post> result) {
                         Log.d("onSuccess.:", String.valueOf(result.size()));
                         loading = result.size() > 0 ? true : false;
-                        //Toast.makeText(getActivity(), "Success" + String.valueOf(result.size()), Toast.LENGTH_SHORT).show();
+                        if (result.size() == 0){
+                            Toast.makeText(getActivity(), "No posts available.", Toast.LENGTH_SHORT).show();
+                        }
                         pb.setVisibility(View.GONE);
                         posts.addAll(result);
                         adapter.notifyDataSetChanged();

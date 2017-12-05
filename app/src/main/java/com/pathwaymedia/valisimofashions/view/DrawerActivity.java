@@ -226,8 +226,8 @@ public class DrawerActivity extends AppCompatActivity
             onClickFashionBeginner(null);
         } else if (id == R.id.nav_fashion_intermediate) {
             onClickFashionIntermediate(null);
-        } else if (id == R.id.nav_fashion) {
-            onClickFashion(null);
+        } else if (id == R.id.nav_fashion_advanced) {
+            onClickFashionAdvanced(null);
         } else if (id == R.id.nav_makeup) {
             onClickMakeup(null);
         } else if (id == R.id.nav_illus) {
@@ -327,6 +327,14 @@ public class DrawerActivity extends AppCompatActivity
         if(!PeopleApplication.get(this).isOnline()){
             return;
         }
+        setTitle("Fashion");
+        addFragment(FashionFragment.newInstance("", ""));
+    }
+
+    public void onClickFashionAdvanced(View view) {
+        if(!PeopleApplication.get(this).isOnline()){
+            return;
+        }
         //addFragment(AllPostsFragment.newInstance("", ""));
         setTitle("Fashion - Advanced");
         PeopleApplication.illus = false;
@@ -351,6 +359,10 @@ public class DrawerActivity extends AppCompatActivity
         setTitle("Fashion - Beginner");
         PeopleApplication.illus = false;
         addFragment(AllPostsFragment.newInstance(String.valueOf(PeopleApplication.FASHION_BEGINNER_CODE), true));
+    }
+
+    public void onClickBack(View view) {
+        onBackPressed();
     }
 
     public void onClickIllustrations(View view) {
