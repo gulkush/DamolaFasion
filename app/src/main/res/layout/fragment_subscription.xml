@@ -39,22 +39,30 @@
                     android:layout_width="match_parent"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="30dp"
+                    android:padding="2dp"
+                    android:background="#e7e7e7"
                     android:layout_marginRight="30dp"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:checked="true"
+                        android:padding="10dp"
+                        android:background="#ffffff"
                         android:id="@+id/rb_paystack"
+                        android:text="(Pay in Naira)"
                         android:layout_height="wrap_content"
-                        android:text="Pay in Naira"/>
+                        android:drawableLeft="@drawable/paystack"
+                        />
                     <RadioButton
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:paddingRight="-30dp"
+                        android:padding="10dp"
+                        android:text="(Pay in Dollars)"
+                        android:drawableLeft="@drawable/paypal"
                         android:layout_height="wrap_content"
-                        android:text="Pay in Dollars"/>
+                        />
                 </RadioGroup>
 
                 <LinearLayout

@@ -1,5 +1,6 @@
 package com.pathwaymedia.valisimofashions.view;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,4 +44,12 @@ public class TutorialDetailActivity extends AppCompatActivity {
         Glide.with(this).load(current_post.getFeaturedImageUrl()).error(R.drawable.valicon_331)
                 .into(iv_featured);
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_tutorial_detail);
+
+    }
+
 }

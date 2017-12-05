@@ -1,6 +1,7 @@
 package com.pathwaymedia.valisimofashions.view;
 
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +44,14 @@ public class LoginActivity extends AppCompatActivity {
 
         return false;
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_login);
+
+    }
+
 
 
 }

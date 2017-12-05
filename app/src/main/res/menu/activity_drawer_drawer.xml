@@ -2,10 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_fashion"
+
+        <item android:id="@+id/nav_fashion_menu"
             android:icon="@drawable/scissors"
-            android:title="Fashion" />
+            android:title="Fashion">
+            <menu>
+                <item
+                    android:id="@+id/nav_fashion_beginner"
+                    android:icon="@drawable/emptystar"
+                    android:title="Beginner" />
+                <item
+                    android:id="@+id/nav_fashion_intermediate"
+                    android:icon="@drawable/halfstar"
+                    android:title="Intermediate" />
+                <item
+                    android:id="@+id/nav_fashion"
+                    android:icon="@drawable/fullstar"
+                    android:title="Advanced" />
+            </menu>
+        </item>
         <item
             android:id="@+id/nav_makeup"
             android:icon="@drawable/eye"

@@ -36,7 +36,10 @@ public static boolean subscribed = false;
 private Scheduler scheduler;
 public static Post current_post;
 public static final int MAKEUP_CODE = 69;
-public static final int FASHION_CODE = 70;
+public static final int FASHION_ADVANCED_CODE = 130;
+public static final int FASHION_BEGINNER_CODE = 128;
+public static final int FASHION_INTERMEDIATE_CODE = 129;
+
 public static final int PAID_CODE = 72;
 public static final int FREE_CODE = 73;
 public static final int ILLUSTRATIONS_CODE = 113;

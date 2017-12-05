@@ -1,5 +1,6 @@
 package com.pathwaymedia.valisimofashions.view;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
@@ -33,4 +34,12 @@ public class PaystackWebViewActivity extends AppCompatActivity {
     public void onBackPressed(){
         finish();
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_paystack_web_view);
+
+    }
+
 }

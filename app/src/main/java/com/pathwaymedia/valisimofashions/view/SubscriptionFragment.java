@@ -141,11 +141,11 @@ public class SubscriptionFragment extends Fragment {
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(getActivity(), "checkSubscription1: "+error.getMessage(), Toast.LENGTH_SHORT).show();
-                StringWriter sw = new StringWriter();
-                PrintWriter pw = new PrintWriter(sw);
-                error.printStackTrace(pw);
-                sendFeedback(sw.toString());
+                if(error.toString().contains("java.io.EOFException")){
+                    checkSubscription();
+                }else{
+                    Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

@@ -1,6 +1,7 @@
 package com.pathwaymedia.valisimofashions.view;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,4 +45,12 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 2000);
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_splash);
+
+    }
+
 }

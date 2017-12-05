@@ -2,6 +2,7 @@ package com.pathwaymedia.valisimofashions.view;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -105,6 +106,13 @@ public class DrawerActivity extends AppCompatActivity
 
 
 
+
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_drawer);
 
     }
 
@@ -213,8 +221,12 @@ public class DrawerActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_fashion) {
+        if (id == R.id.nav_fashion_beginner) {
             // Handle the camera action
+            onClickFashionBeginner(null);
+        } else if (id == R.id.nav_fashion_intermediate) {
+            onClickFashionIntermediate(null);
+        } else if (id == R.id.nav_fashion) {
             onClickFashion(null);
         } else if (id == R.id.nav_makeup) {
             onClickMakeup(null);
@@ -316,9 +328,29 @@ public class DrawerActivity extends AppCompatActivity
             return;
         }
         //addFragment(AllPostsFragment.newInstance("", ""));
-        setTitle("Fashion");
+        setTitle("Fashion - Advanced");
         PeopleApplication.illus = false;
-        addFragment(AllPostsFragment.newInstance(String.valueOf(PeopleApplication.FASHION_CODE), true));
+        addFragment(AllPostsFragment.newInstance(String.valueOf(PeopleApplication.FASHION_ADVANCED_CODE), true));
+    }
+
+    public void onClickFashionIntermediate(View view) {
+        if(!PeopleApplication.get(this).isOnline()){
+            return;
+        }
+        //addFragment(AllPostsFragment.newInstance("", ""));
+        setTitle("Fashion - Intermediate");
+        PeopleApplication.illus = false;
+        addFragment(AllPostsFragment.newInstance(String.valueOf(PeopleApplication.FASHION_INTERMEDIATE_CODE), true));
+    }
+
+    public void onClickFashionBeginner(View view) {
+        if(!PeopleApplication.get(this).isOnline()){
+            return;
+        }
+        //addFragment(AllPostsFragment.newInstance("", ""));
+        setTitle("Fashion - Beginner");
+        PeopleApplication.illus = false;
+        addFragment(AllPostsFragment.newInstance(String.valueOf(PeopleApplication.FASHION_BEGINNER_CODE), true));
     }
 
     public void onClickIllustrations(View view) {
@@ -372,7 +404,7 @@ public class DrawerActivity extends AppCompatActivity
 
         PeopleApplication.subscribed = Paper.book().read("subscribed", false);
         int dontCheck = Paper.book().read("dontCheck", 0);
-        Paper.book().write("dontCheck", ((dontCheck+1)%10)); // Primitive
+        Paper.book().write("dontCheck", ((dontCheck+1)%5)); // Primitive
 
         if(dontCheck !=0 && PeopleApplication.subscribed){
             return;
