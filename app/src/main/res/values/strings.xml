@@ -21,7 +21,7 @@
     <string name="paystack_public_key">pk_test_f00efea04e4f2d947d66aebcd9022b4cc1c050a1</string>
     <string name="youtube_api_key">AIzaSyCLZImoANtkmUQnzqfyl3_1alon170Ab3M</string>
     <string name="youtube_img_url">https://img.youtube.com/vi/#ytid#/0.jpg</string>
-    <string name="banner_ad_unit_id">ca-app-pub-6844894412719021/8904567900</string>
+    <string name="banner_ad_unit_id">ca-app-pub-4304481055224384/3501825656</string>
     <string name="text_subscribe">Your subscription is inactive</string>
     <string name="text_subscribed">Your subscription is active</string>
     <string name="planCode">PLN_txbb2gs0y4naug4</string>
